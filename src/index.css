@@ -1,0 +1,121 @@
+:root {
+  font-family: "Inter", sans-serif !important;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --primary-color: #FFD61B;
+  --secondary--color: #434142;
+  --text-color-menu: #868589;
+  --subTitle-color: #3E3E3E;
+  --title--color: #434142;
+  --description-color: #8E8D8D;
+  --bg-portada: #F7F7F7;
+
+  p {
+    font-size: 16px;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  padding: 15px;
+  box-shadow: 8px 8px 16px #0000000A;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.link {
+  float: right;
+  color: var(--secondary-color);
+}
+
+.icon {
+  color: var(--primary-color);
+}
+
+.menu {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 66px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 8px 8px 16px #0000000A;
+}
+.item-menu {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  color: var(--text-color-menu);
+}
+
+.portada {
+  height: 160px;
+  width: 100%;
+  background-color: var(--bg-portada);
+}
+
+.subtitle {
+  font-size: 24px;
+  color: var(--subTitle-color);
+}
+
+.titleText {
+  font-size: 22px;
+  color: var(--subTitle-color);
+}
+
+.title {
+  font-size: 36px;
+  color: var(--title--color);
+}
+
+.description {
+  font-size: 13px;
+  color: var(--description-color);
+}
+
+.grid-container-Welcome {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0px;
+  padding: 10px;
+}
+
+.grid-avatar {
+  grid-row-start: 1;
+  grid-row-end: 4;
+  display: flex;
+  align-items: center;
+}
+
+.avatar-photo {
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+  object-fit: cover;
+  border: 2px solid var(--primary-color);
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+.container-home {
+  height: calc(100vh - 226px) !important;
+  align-items: normal;
+  padding-top: 64px;
+}
