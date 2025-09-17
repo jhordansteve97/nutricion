@@ -27,7 +27,9 @@ export const Radio = ({ options, value, onChange, onBlur, name, label }) => {
 
 
 Radio.propTypes = {
+  /** Texto del radio */
   label: PropTypes.string,
+  /** Opciones del radio */
   options: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,
@@ -35,6 +37,8 @@ Radio.propTypes = {
       image: PropTypes.element,
     })
   ).isRequired,
+  /** Valor del radio */
   value: PropTypes.string,
+  /** Funcion para actualizar el radio */
   onChange: PropTypes.func.isRequired,
 };

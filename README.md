@@ -10,8 +10,17 @@ Este es un proyecto de salud para la parte de nutrición.
 
 ## Levantar proyecto
 
-`npm run dev`
-`npx json-server db.json`
+```bash
+npm run dev
+npx json-server db.json
+```
+
+## Storybook
+Si quieres ver la documentacion de cada componente puedes levantar el storybook con el siguiente comando:
+
+```bash
+npm run storybook
+```
 
 > [!NOTE]
 > Es necesario que se levante el servicio para que pueda ejecutar correctamente el proyecto.

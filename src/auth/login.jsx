@@ -29,11 +29,12 @@ export const Login = () => {
     onSubmit: (values) => {
       const { email, password } = values;
       login(email, password).then((result) => {
+        console.log(result);
         if (result.success) {
           localStorage.setItem("user", JSON.stringify(result?.user));
           navigate(`/home/${result.user.id}`);
         } else {
-          alert("no se pudo encontrar");
+          alert(result.message);
         }
       });
     },

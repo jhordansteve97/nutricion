@@ -26,8 +26,11 @@ export const InputDate = ({ label, onChange, value }) => {
 };
 
 InputDate.propTypes = {
+  /** Texto del input */
   label: PropTypes.string,
+  /** Funcion para actualizar el input */
   onChange: PropTypes.func,
+  /** Valor del input */
   value: PropTypes.oneOfType([
     PropTypes.object, // dayjs
     PropTypes.instanceOf(dayjs), // más específico

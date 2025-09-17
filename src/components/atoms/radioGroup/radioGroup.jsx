@@ -27,11 +27,18 @@ export const RadioGroupButton = ({ label, options, id, onChange, value, error, h
 }
 
 RadioGroupButton.propTypes = {
+  /** Texto para del radio */
   label: PropTypes.string,
-  options: PropTypes.array,
+  /** opciones para que genere el radio */
+  options: PropTypes.array.isRequired,
+  /** Id del Radio */
   id: PropTypes.string,
+  /** Funcion para actualizar el radio */
   onChange: PropTypes.func,
+  /** Valor del radio */
   value: PropTypes.string,
+  /** Validar si hay un error */
   error: PropTypes.bool,
+  /** Mostrar el mensaje del error */
   helperText: PropTypes.string
 }

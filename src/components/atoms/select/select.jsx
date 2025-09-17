@@ -36,10 +36,16 @@ export const SelectForm = ({
 };
 
 SelectForm.propTypes = {
+  /** Valor del selec */
   value: PropTypes.string,
+  /** Funcion para actualizar el select */
   onChange: PropTypes.func,
+  /** Texto para del select */
   label: PropTypes.string,
+  /** opciones para que genere el select */
   options: PropTypes.array,
+  /** Validar si hay un error */
   error: PropTypes.bool,
+  /** Mostrar el mensaje del error */
   helperText: PropTypes.string,
 };

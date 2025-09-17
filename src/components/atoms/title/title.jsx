@@ -10,6 +10,8 @@ export const Title = ({icon, label}) => {
 }
 
 Title.propTypes = {
+  /** Agrer icono en el titulo */
   icon: PropTypes.element,
+  /** Agregar texto del titulo */
   label: PropTypes.string
 }

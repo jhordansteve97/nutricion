@@ -31,9 +31,14 @@ export const Input = ({
 };
 
 Input.propTypes = {
+  /** Valor del input */
   value: PropTypes.string.isRequired,
+  /** Funcion para actualizar el input */
   onChange: PropTypes.func.isRequired,
+  /** Texto para el input */
   label: PropTypes.string,
+  /** Diseño del input */
   variant: PropTypes.oneOf(["standard", "outlined-basic", "filled-basic"]),
+  /** Agregar texto al final sin que afecte el valor  */
   adornments: PropTypes.string
 };

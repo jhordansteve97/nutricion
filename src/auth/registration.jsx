@@ -39,6 +39,7 @@ export const Registration = () => {
       api
         .post("/users", { id: count.toString(), name, age, email, phone, job, password })
         .then((data) => {
+          console.log({data});
           if (data.error) {
             alert("No se pudo registrar");
           } else {
