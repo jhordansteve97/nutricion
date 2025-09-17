@@ -115,10 +115,10 @@ export const Objective = ({ onSubmit, id, form }) => {
               )}
             </Grid>
           ))}
-          <Grid sx={{ marginTop: "20px" }} size={12} className="center">
-            <Buttons label={"Continuar"} />
+          <Grid size={12} className="center button-submit">
+            <Buttons label="Continuar" />
           </Grid>
-          <Grid sx={{ marginTop: "-140px" }} size={4} className="center">
+          <Grid size={{ xs: 12, sm: 12, md: 4 }} className="center button-save">
             <div>
               <p style={{ margin: 0, color: "#686767", fontSize: "14px" }}>
                 Deseo continuar despues

@@ -6,14 +6,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --primary-color: #FFD61B;
+  --primary-color: #ffd61b;
   --primary-rgba: rgba(255, 214, 27, 0.5);
   --secondary--color: #434142;
   --text-color-menu: #868589;
-  --subTitle-color: #3E3E3E;
+  --subTitle-color: #3e3e3e;
   --title--color: #434142;
-  --description-color: #8E8D8D;
-  --bg-portada: #F7F7F7;
+  --description-color: #8e8d8d;
+  --bg-portada: #f7f7f7;
 
   p {
     font-size: 16px;
@@ -33,7 +33,7 @@
 
 .box {
   padding: 15px;
-  box-shadow: 8px 8px 16px #0000000A;
+  box-shadow: 8px 8px 16px #0000000a;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -58,7 +58,9 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 8px 8px 16px #0000000A;
+  background: #fff;
+  box-shadow: 8px 8px 16px #0000000a;
+  z-index: 100;
 }
 .item-menu {
   text-align: center;
@@ -124,4 +126,22 @@
   height: calc(100vh - 226px) !important;
   align-items: normal;
   padding-top: 64px;
+}
+
+.button-save {
+  margin-top: -140px;
+}
+.button-submit {
+  margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+  .button-save {
+    margin-top: 10px;
+    order: 1;
+  }
+  .button-submit {
+    margin-top: 0px;
+    order: 2;
+  }
 }

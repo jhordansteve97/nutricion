@@ -265,11 +265,11 @@ export const MedicalHistory = ({ onSubmit, idParams, form, data }) => {
               return null;
             })}
 
-            <Grid item size={12} sx={{ marginTop: "20px" }} className="center">
+            <Grid item size={12} className="center button-submit">
               <Buttons label="Continuar" />
             </Grid>
 
-            <Grid item size={4} sx={{ marginTop: "-140px" }} className="center">
+            <Grid item  size={{ xs: 12, sm: 12, md: 4 }} className="center button-save">
               <div>
                 <p style={{ margin: 0, color: "#686767", fontSize: "14px" }}>
                   Deseo continuar después
