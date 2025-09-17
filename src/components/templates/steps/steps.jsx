@@ -14,7 +14,7 @@ const Content = ({ step, onSubmit, id }) => {
 
   switch (step) {
     case 0:
-      return <Objective onSubmit={onSubmit} id={id} form={form?.objective} />;
+      return <Objective onSubmit={onSubmit} id={id} form={form?.objective} data={form} />;
     case 1:
       return <MedicalHistory onSubmit={onSubmit} idParams={id} form={form?.medicalHistory} data={form} /> ;
     default:

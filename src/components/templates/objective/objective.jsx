@@ -12,7 +12,7 @@ import { formUserJson, validationFormObjective } from "./objective.validation";
 import { Radio, Title, Input, Buttons } from "../../atoms";
 import { api } from "../../../server/apiFetch";
 
-export const Objective = ({ onSubmit, id, form }) => {
+export const Objective = ({ onSubmit, id, form, data }) => {
   const options = [
     {
       label: "Pérdida de peso",
@@ -48,19 +48,37 @@ export const Objective = ({ onSubmit, id, form }) => {
     enableReinitialize: true,
     validationSchema: validationFormObjective,
     onSubmit: (objective) => {
-      api
-        .post(`/medicalData`, {
-          id: id,
-          idUser: id,
-          objective
-        })
-        .then((data) => {
+      if (form) {
+        const { id, idUser, medicalHistory } = data;
+        const dataObjective = {
+          id,
+          idUser,
+          objective,
+          medicalHistory,
+        };
+        api.put(`/medicalData/${id}`, dataObjective).then((data) => {
           if (data.error) {
             alert("No se pudo registrar");
           } else {
             onSubmit();
           }
         });
+      }
+      else {
+        api
+          .post(`/medicalData`, {
+            id: id,
+            idUser: id,
+            objective,
+          })
+          .then((data) => {
+            if (data.error) {
+              alert("No se pudo registrar");
+            } else {
+              onSubmit();
+            }
+          });
+      }
     },
   });
 
@@ -143,5 +161,6 @@ export const Objective = ({ onSubmit, id, form }) => {
 Objective.propTypes = {
   onSubmit: PropTypes.func,
   id: PropTypes.string,
-  form: PropTypes.object
+  form: PropTypes.object,
+  data: PropTypes.object,
 };

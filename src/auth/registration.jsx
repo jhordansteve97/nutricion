@@ -12,6 +12,15 @@ import { Center, FormUser } from "../components/templates";
 export const Registration = () => {
   const navigate = useNavigate();
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (user){
+      const { id } = JSON.parse(user);
+      navigate(`/home/${id}`);
+    }
+  }, [navigate]);
+
   useEffect(() => {
     api.get("/users").then((data) => setCount(data.data.length + 1));
   }, []);
@@ -33,7 +42,7 @@ export const Registration = () => {
           if (data.error) {
             alert("No se pudo registrar");
           } else {
-            navigate(`/home/${data.data.id}`);
+            navigate(`/`);
           }
         })
     },

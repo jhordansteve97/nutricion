@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useFormik } from "formik";
 import { useNavigate, Link } from "react-router";
 import { Grid } from "@mui/material";
@@ -11,6 +12,14 @@ import { Input, Buttons } from "../components/atoms";
 
 export const Login = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (user){
+      const { id } = JSON.parse(user);
+      navigate(`/home/${id}`);
+    }
+  }, [navigate]);
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -21,6 +30,7 @@ export const Login = () => {
       const { email, password } = values;
       login(email, password).then((result) => {
         if (result.success) {
+          localStorage.setItem("user", JSON.stringify(result?.user));
           navigate(`/home/${result.user.id}`);
         } else {
           alert("no se pudo encontrar");
@@ -33,7 +43,11 @@ export const Login = () => {
     <Center>
       <div className="box">
         <form onSubmit={formik.handleSubmit}>
-          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+          <Grid
+            container
+            spacing={{ xs: 2, md: 3 }}
+            columns={{ xs: 4, sm: 8, md: 12 }}
+          >
             <Grid size={12}>
               <Input
                 icon={<EmailIcon className="icon" />}

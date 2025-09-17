@@ -10,9 +10,15 @@ export const useUser = (id) => {
     try {
       setLoading(true);
       const res = await api.get(`/users/${userId}`);
-      setUserData(res.data);
+      const { error, data } = res;
+      setUserData(data);
+      setError(error);
+      if (error) {
+        localStorage.removeItem("user");
+      }
     } catch (err) {
       setError(err);
+      localStorage.removeItem("user");
     } finally {
       setLoading(false);
     }
