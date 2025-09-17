@@ -1,5 +1,56 @@
 {
   "users": [
-    { "id": "1", "name": "User", "age": "18", "email": "user@email.com", "phone": "5555555", "job": "job", "passowrd": "123456789" }
+    {
+      "id": "1",
+      "name": "User",
+      "age": "18",
+      "email": "user@email.com",
+      "phone": "5555555",
+      "job": "job",
+      "passowrd": "123456789"
+    }
+  ],
+  "medicalData": [
+    {
+      "id": "1",
+      "idUser": "1",
+      "objective": {
+        "weight": 50,
+        "height": 50,
+        "idealWeight": 50,
+        "objective": 2,
+        "weightMin": 50,
+        "weightMax": 50
+      },
+      "medicalHistory": {
+        "relatives": [
+          {
+            "name": "Francisco",
+            "relation": "abuelo"
+          },
+          {
+            "name": "Oscar",
+            "relation": "padre"
+          }
+        ],
+        "suffering": "2",
+        "whichSuffering": "",
+        "allergy": "2",
+        "whichAllergy": "",
+        "surgery": "2",
+        "whichSurgery": "",
+        "diet": "2",
+        "whichDiet": "",
+        "medications": "2",
+        "whichMedications": "",
+        "reductiveTreatments": "1",
+        "whichReductiveTreatments": "test 6",
+        "supplements": "2",
+        "whichSupplements": "",
+        "medicalStudies": "2",
+        "whichMedicalStudies": "",
+        "date": "2025-09-16"
+      }
+    }
   ]
 }

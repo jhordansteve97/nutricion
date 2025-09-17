@@ -1,0 +1,10 @@
+@import '../../../index.css';
+.container-title {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--title--color);
+  font-weight: bold;
+  font-size: 25px;
+}

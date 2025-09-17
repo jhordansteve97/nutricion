@@ -1,0 +1,29 @@
+@import '../../../index.css';
+
+.radio-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.radio-button {
+  width: 173px;
+  height: 85px;
+  text-align: center;
+  font-size: 15px/17px;
+  color: var(--description-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid var(--description-color);
+  background-color: var(--bg-portada);
+  margin: 10px 0;
+}
+
+.radio-button-activate {
+  border: 2px solid var(--primary-color);
+  background-color: var(--primary-rgba);
+}

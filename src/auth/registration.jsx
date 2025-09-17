@@ -4,10 +4,8 @@ import { useNavigate } from "react-router";
 
 
 import { api } from "../server/apiFetch";
-
-import { validationSchemaRegistration } from "../components/templates/formUser.validation";
-import { Center } from "../components/templates/center";
-import { FormUser } from "../components/templates/formUser";
+import { validationSchemaRegistration } from "../components/templates/formUser/formUser.validation";
+import { Center, FormUser } from "../components/templates";
 
 
 
@@ -43,7 +41,7 @@ export const Registration = () => {
 
   return (
     <Center>
-      <div className="box" style={{width: '80%'}}>
+      <div className="box containerForm">
         <FormUser formik={formik} label="Registrar" isRegister />
       </div>
     </Center>

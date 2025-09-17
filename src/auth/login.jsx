@@ -1,15 +1,13 @@
 import { useFormik } from "formik";
-import { useNavigate } from "react-router";
+import { useNavigate, Link } from "react-router";
 import { Grid } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import PasswordIcon from "@mui/icons-material/Password";
 
 import { validationSchema } from "./login.validation";
-import { Input } from "../components/atoms/input";
-import { Center } from "../components/templates/center";
-import { Link } from "react-router";
-import { Buttons } from "../components/atoms/button";
+import { Center } from "../components/templates/center/center";
 import { login } from "../server/auth.server";
+import { Input, Buttons } from "../components/atoms";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -23,7 +21,6 @@ export const Login = () => {
       const { email, password } = values;
       login(email, password).then((result) => {
         if (result.success) {
-          console.log(result);
           navigate(`/home/${result.user.id}`);
         } else {
           alert("no se pudo encontrar");
@@ -36,7 +33,7 @@ export const Login = () => {
     <Center>
       <div className="box">
         <form onSubmit={formik.handleSubmit}>
-          <Grid container spacing={2}>
+          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
             <Grid size={12}>
               <Input
                 icon={<EmailIcon className="icon" />}

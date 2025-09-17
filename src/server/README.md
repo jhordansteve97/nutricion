@@ -1,5 +1,5 @@
 ## Consumo de api
-## Ejemplos
+Aqui podras ver ejemplos de como utilizar cada metodo.
 
 ### GET
 ```

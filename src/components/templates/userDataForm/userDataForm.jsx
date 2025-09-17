@@ -1,19 +1,10 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router";
 import { useFormik } from "formik";
-
-
-import { FormUser } from "./formUser";
-import { validationSchemaUser } from "./formUser.validation";
-import { api } from "../../server/apiFetch";
+import { FormUser } from "../index";
+import { validationSchemaUser } from "../formUser/formUser.validation";
+import { api } from "../../../server/apiFetch";
 import PropTypes from "prop-types";
 
-export const UserData = ({ onSubmit }) => {
-  const params = useParams();
-  const [user, setUser] = useState(null);
-  useEffect(() => {
-    api.get(`/users/${params.id}`).then((res) => setUser(res.data));
-  }, [params]);
+export const UserDataForm = ({ onSubmit, user, id }) => {
 
   const formik = useFormik({
     initialValues: {
@@ -28,7 +19,7 @@ export const UserData = ({ onSubmit }) => {
     onSubmit: (values) => {
       const { name, age, email, phone, job } = values;
       api
-        .put(`/users/${params.id}`, {
+        .put(`/users/${id}`, {
           name,
           age,
           email,
@@ -46,7 +37,7 @@ export const UserData = ({ onSubmit }) => {
   });
   return (
     <div className="center container-home">
-      <div style={{ width: "700px" }}>
+      <div className="containerForm">
         <p>Para comenzar, ayúdanos a verificar tus datos.</p>
         <FormUser formik={formik} label="Continuar" />
       </div>
@@ -54,6 +45,8 @@ export const UserData = ({ onSubmit }) => {
   );
 };
 
-UserData.propTypes = {
+UserDataForm.propTypes = {
+  id: PropTypes.string,
+  user: PropTypes.object,
   onSubmit: PropTypes.func
 }

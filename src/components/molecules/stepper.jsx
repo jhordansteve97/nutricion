@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import uuid4 from "uuid4";
 import { styled } from '@mui/material/styles';
 import Stack from '@mui/material/Stack';
 import Stepper from '@mui/material/Stepper';
@@ -19,7 +20,7 @@ const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   },
   [`&.${stepConnectorClasses.active}`]: {
     [`& .${stepConnectorClasses.line}`]: {
-      background: '#FFD61B', //color de las lineas
+      background: '#FFD61B',
     },
   },
   [`&.${stepConnectorClasses.completed}`]: {
@@ -42,7 +43,7 @@ const ColorlibStepIconRoot = styled('div')(({ theme }) => ({
   backgroundColor: '#ccc',
   zIndex: 1,
   color: '#fff',
-  width: 30, // tamño de los circulos
+  width: 30,
   height: 30,
   display: 'flex',
   borderRadius: '50%',
@@ -106,16 +107,20 @@ ColorlibStepIcon.propTypes = {
 
 const steps = ['', '', '', '', ''];
 
-export const CustomizedSteppers = () => {
+export const CustomizedSteppers = ({ step }) => {
   return (
-    <Stack spacing={4} style={{marginTop: '34px'}}>
-      <Stepper alternativeLabel activeStep={2} connector={<ColorlibConnector />}>
+    <Stack spacing={4} style={{margin: '34px 0'}}>
+      <Stepper alternativeLabel activeStep={step} connector={<ColorlibConnector />}>
         {steps.map((label) => (
-          <Step key={label}>
+          <Step key={uuid4()}>
             <StepLabel StepIconComponent={ColorlibStepIcon}>{label}</StepLabel>
           </Step>
         ))}
       </Stepper>
     </Stack>
   );
+}
+
+CustomizedSteppers.propTypes = {
+  step: PropTypes.number
 }
